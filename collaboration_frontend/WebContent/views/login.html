@@ -1,0 +1,29 @@
+
+<div id="login-box">
+<div  class="error" ng-show="error.message">  Invalid credentials..!
+<span >{{error.message}}</span>
+</div>
+<div class="msg" ng-show="successMessage"> Logged out successfully..!
+<span>{{successMessage}}</span>
+</div>
+<div class="error" ng-show="errorMessage">Please login..!
+<span>{{errorMessage}}</span>
+</div>
+
+
+  <div class="imgcontainer">
+    <img src="resources/images/sf.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="email"><b><h4>Enter Email:</h4></b></label>
+    <input type="text" ng-model="user.email" placeholder="Enter Email Id" name="email" required>
+
+    <label for="psw"><b><h4>Enter Password:</h4></b></label>
+    <input type="password" ng-model="user.password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" ng-click="login()">Login</button>
+   
+  </div>
+
+  

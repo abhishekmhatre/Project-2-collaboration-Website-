@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row" style="width:200px">
+		<div ng-repeat="user in suggestedUsers">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<img
+						src="http://localhost:8085/collaboration_middleware/getimage/{{user.email}}"
+						height="50px" width="50px" alt="No Image">
+				</div>
+
+				<div class="panel-body">
+					<b>Email:</b>{{user.email}}<br> 
+					<b>Name:</b>{{user.firstname}}&nbsp;{{user.lastname}}<br> 
+					<b>Role:</b>{{user.role}}<br> 
+					<b>Online Status:</b>{{user.online_status}}
+					<button type="button" class="button button-primary" ng-click="addFriend(user)">Send Friend Request</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

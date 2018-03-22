@@ -1,0 +1,22 @@
+<span class="error" ng-show="error.message">
+{{error.message}}
+</span>
+
+<div class="container">
+<form>
+
+<div class="form-group">
+<label><h3>Blog Title:</h3></label>
+<input type="text" ng-model="blog.blogTitle" class="form-control">
+</div>
+
+<div class="form-group">
+<label><h3>Content:</h3></label>
+<textarea rows="8" cols="15" ng-model="blog.blogContent" class="form-control"></textarea>
+</div>
+
+<input type="submit" ng-click="addBlog(blog)" value="Add Blog">
+</form>
+
+</div>
+

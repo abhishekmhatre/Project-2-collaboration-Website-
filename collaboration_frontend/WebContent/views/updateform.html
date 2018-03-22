@@ -1,0 +1,47 @@
+<form  style="border:1px solid #ccc">
+  <div class="container">
+    <center><h1><u>My Profile</u></h1></center>
+   
+    <hr>
+    
+    
+    
+    <center><li><a href="#/profilepic" >
+<img src="http://localhost:8085/collaboration_middleware/getimage/{{loggedInUser.email}}" alt="upload picture" width="100px" height="100px" disabled></a></li></center><br>
+ 
+
+    <label for="email"><h4><b>Email:</b></h4></label>
+    <input type="text" ng-model="user.email" placeholder="Enter Email" name="email" disabled> <br>
+
+    <label for="first-name"><h4><b>First Name:</b></h4></label>
+    <input type="text" ng-model="user.firstname" placeholder="Enter First Name" name="firstname" disabled><br> 
+    
+    <label for="last-name"><h4><b>Last Name:</b></h4></label>
+    <input type="text" ng-model="user.lastname" placeholder="Enter Last Name" name="lastname" disabled><br>
+    
+    <label for="phone-number"><h4><b>Phone Number:</b></h4></label>
+    <input type="text" ng-model="user.phonenumber" placeholder="Enter Phone Number" name="phonenumber" ><br>
+    
+    
+	<form>
+	<h4><b>Select Role:</b></h4>
+  	<input type="radio" ng-model="user.role" value="Student" checked> Student<br>
+  	<input type="radio" ng-model="user.role" value="Alumini"> Alumini<br>
+  	<input type="radio" ng-model="user.role" value="Employee"> Employee  
+	</form> <br>
+
+ 	<button onclick="myFunction()"> Check last modified on ?</button>
+	<p id="demo"></p>
+		<script>
+			function myFunction() {
+    		var x = document.lastModified;
+    		document.getElementById("demo").innerHTML = x;
+			}
+		</script><br>
+
+ 	<li><a href="#/updateprofile">Update Details</a></li>
+
+
+    
+  </div>
+</form>

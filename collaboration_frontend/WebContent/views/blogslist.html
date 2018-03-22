@@ -1,0 +1,38 @@
+<div ng-show="loggedInUser.role=='ADMIN'">
+<span ng-if="blogsWaitingForApproval.length==0"><center>No Blogs Waiting for Approval.</center></span>
+	<div class="container"ng-hide="blogsWaitingForApproval.length==0">
+		<div class="panel panel-info">
+			<div class="panel-heading">List of Blogs waiting for approval.</div>
+			<div class="panel-body">
+				<div ng-repeat="blog in blogsWaitingForApproval">
+					<br><img src="http://localhost:8085/collaboration_middleware/getimage/{{blog.postedBy.email}}" height="50px" width="50px" alt="No Image"><br>
+					
+					<b><a href="#/getapprovalform/{{blog.id}}">{{blog.blogTitle}}</a></b><br> 
+					<b>Author:</b>{{blog.postedBy.firstname}}&nbsp;{{blog.postedBy.lastname}}<br> 
+					<b>Posted On:</b>{{blog.postedOn| date:'medium'}}<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div>
+<div class="container">
+		<div class="panel panel-info">
+			<div class="panel-heading">List of Blogs Approved.</div>
+			<div class="panel-body">
+				<div ng-repeat="blog in blogsApproved">
+				<div>
+					<br>
+					<img src="http://localhost:8085/collaboration_middleware/getimage/{{blog.postedBy.email}}" height="50px" width="50px" alt="No Image"><br>
+					
+					<b><a  href="#/getblog/{{blog.id}}">{{blog.blogTitle}}</a></b><br> 
+					<b>Author:</b>{{blog.postedBy.firstname}}&nbsp;{{blog.postedBy.lastname}}<br> 
+					<b>Posted On:</b>{{blog.postedOn| date:'medium'}}<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+

@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h2>Job Details</h2>
+			Search : <input type="text" ng-model="searchText">
+		</div>	
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th><h3><b><u>Job Title</u></b></h3></th>
+			<th><h3><b><u>Skills Required</u></b></h3></th>
+			<th><h3><b><u>Posted On</u></b></h3></th>
+			<th><h3><b><u>View</u></b></h3></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="job in jobs | filter:searchText">
+			<td><h4><a href="#/getjob/{{job.id}}">{{job.jobTitle}}</a></h4></td>
+			<td><h4>{{job.skillsRequired}}</h4></td>
+			<td><h4>{{job.postedOn | date:'medium'}}</h4></td>
+			<td><h4><a href="#/getjob/{{job.id}}"><span class="glyphicon glyphicon-info-sign"></span></a></h4></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>

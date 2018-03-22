@@ -1,0 +1,22 @@
+<h2><span ng-if="friends.length==0"><center><b>Yet now, you have no Friends.</b></center></span></h2>
+
+
+<div class="container">
+	<div class="row">
+		<div ng-repeat="friend in friends">
+			<!-- friend is an object of type User -->
+			<div class="panel panel-info">
+				<div class="panel-body">
+				
+					<img
+						src="http://localhost:8085/collaboration_middleware/getimage/{{friend.email}}"
+						height="50px" width="50px" alt="No Image"><br>
+					<b>Email:</b>{{friend.email}}<br> 
+					<b>Name:</b>{{friend.firstname}}&nbsp;{{friend.lastname}}<br> 
+					<b>Role:</b>{{friend.role}}<br>
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

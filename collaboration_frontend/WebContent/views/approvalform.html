@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<b>{{blogPost.blogTitle}}</b><br> 
+			<b>Author:</b>{{blogPost.postedBy.firstname}} &nbsp; {{blogPost.postedBy.lastname}}<br>
+			<b>Posted On:</b>{{blogPost.postedOn| date:'medium'}}<br>
+		</div>
+
+		<div class="panel-body">
+			<p ng-bind-html="content"></p> <!-- content is blogPost.blogContent as HTML -->
+		</div>
+	</div>
+
+ 
+ 
+ <button type="button" class="btn btn-outline btn-success" ng-click="blogApproved(blogPost.id)" ng-hide="isRejected">Accept</button>&nbsp
+ <button type="button" class="btn btn-outline btn-warning" ng-click="showRejectionTxt()" ng-hide="isRejected">Reject</button><br>
+ <form ng-show="isRejected">
+ 
+ 
+ <div class="panel-heading"><h4>Enter Rejection reason: </h4></div>
+ <textarea rows="5" cols="170" ng-model="rejectionReason"></textarea><br>
+ <button type="button" class="btn btn-outline btn-warning" ng-click="blogRejected(id,rejectionReason)">Submit</button>
+ </form>
+
+ </div>
+ 
